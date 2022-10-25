@@ -1,7 +1,7 @@
 # Awélé
 
 Petit programme en mode texte pour jouer contre l'ordi à Awélé.
-Règles du jeu (ici)[https://www.regledujeu.fr/awale/].
+Règles du jeu [ici](https://www.regledujeu.fr/awale/).
 
 ### Remarques
 
