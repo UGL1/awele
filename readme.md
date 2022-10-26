@@ -11,4 +11,4 @@ Règles du jeu [ici](https://www.regledujeu.fr/awale/).
 # À faire
 
 - l'interface graphique
-- passer en objet pour montrer aux élèves
+
