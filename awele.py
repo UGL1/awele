@@ -1,3 +1,5 @@
+from random import choice
+
 COMPUTER = 0
 PLAYER = 1
 
@@ -32,7 +34,7 @@ class Awele:
             n = (n + 1) % 12
             if n != leave_empty:
                 self.hole[n].plant()
-                seeds -= 1
+            seeds -= 1
         while 2 <= self.hole[n].seeds <= 3 and self.hole[n].owner != player:
             self.score[player] += self.hole[n].take()
             n = (n - 1) % 12
@@ -52,7 +54,7 @@ class Awele:
             n = (n + 1) % 12
             if n != leave_empty:
                 virtual_board[n] += 1
-                seeds -= 1
+            seeds -= 1
         while 2 <= virtual_board[n] <= 3 and n // 6 != player:
             result += virtual_board[n]
             virtual_board[n] = 0
@@ -60,7 +62,9 @@ class Awele:
         return result
 
     def find_best_move(self):
-        return max([i for i in range(6) if self.hole[i].seeds != 0], key=lambda x: self.simulate(x))
+        m = max([i for i in range(6) if self.hole[i].seeds != 0], key=lambda x: self.simulate(x))
+        n = self.simulate(m)
+        return choice([i for i in range(6) if self.hole[i] != 0 and self.simulate(i) == n])
 
     def __str__(self):
         result = "*" * 22 + "\n"
